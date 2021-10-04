@@ -28,12 +28,13 @@ def get_artist(artist_info):
 
 
 # Returns list of trackIDs in a given playlist
+# IMPORTANT
 def get_playlist_tracks(playlist_id):
     idList = []
     playlist = sp.playlist(playlist_id)
     for item in playlist['tracks']['items']:
         track = item['track']
-        idList.append(track['id'])
+        idList.append(track['popularity'])  # THIS GETS SPECIFIC INFO FROM EACH TRACK. 'id', 'name','popularity'
     return idList
 
 
@@ -62,9 +63,17 @@ def get_track_data(id):
     track_data = [name, album, artist, release_date, convert_time(length), popularity]
     return track_data
 
+# Place data into database
+    def db_insert():
+
+        return
+
 
 if __name__ == '__main__':
     print(get_artist('spotify:artist:5K4W6rqBFWDnAN6FQUkS6x'))
     print(get_track_data('spotify:track:2pX4FpOgwItRVPPUFdRcxA'))
-    print(get_playlist_tracks('spotify:playlist:37i9dQZF1DXcBWIGoYBM5M'))
-    print('This one will be fun for real this time')
+    print(get_playlist_tracks('spotify:playlist:03R7LThwew4SbG73ypLB5s'))
+
+# spotify:playlist:03R7LThwew4SbG73ypLB5s Tori tori prep
+# spotify:playlist:37i9dQZF1DXcBWIGoYBM5M Top hits
+
