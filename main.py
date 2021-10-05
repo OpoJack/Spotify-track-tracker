@@ -14,16 +14,26 @@ import pandas as pd
 import time
 
 import pymongo
-from secrets import my_spotify_client_id, my_spotify_token
+from pymongo import MongoClient
+from secrets import my_spotify_client_id, my_spotify_token, db_string
 
 auth_manager = SpotifyClientCredentials(client_id=my_spotify_client_id,
                                         client_secret=my_spotify_token)
 sp = spotipy.Spotify(auth_manager=auth_manager)
 
 
+def get_database():
+
+    # Create a connection using MongoClient.
+    client = MongoClient(db_string)
+
+    # Create the database for our example (we will use the same database throughout the tutorial
+    return client['track_list']
+
+
 # Returns artist info
-def get_artist(artist_info):
-    artist = sp.artist(artist_info)
+def get_artist(artist_id):
+    artist = sp.artist(artist_id)
     return artist
 
 
@@ -70,10 +80,17 @@ def get_track_data(id):
 
 
 if __name__ == '__main__':
-    print(get_artist('spotify:artist:5K4W6rqBFWDnAN6FQUkS6x'))
+    trackdb = get_database()
+    # print(get_artist('spotify:artist:5K4W6rqBFWDnAN6FQUkS6x'))
     print(get_track_data('spotify:track:2pX4FpOgwItRVPPUFdRcxA'))
     print(get_playlist_tracks('spotify:playlist:03R7LThwew4SbG73ypLB5s'))
 
+    collection_name = trackdb["BIG_TEST"] # Creates new database called track_list
+    item_1 = get_artist('spotify:artist:5K4W6rqBFWDnAN6FQUkS6x') # gets artist info
+    collection_name.insert_one(item_1) # inserts item_1 into database
+
+    # TODO
+    # Get only specific data: Song URI, track name, artist name, album name, genre(s), popularity, DATE
+
 # spotify:playlist:03R7LThwew4SbG73ypLB5s Tori tori prep
 # spotify:playlist:37i9dQZF1DXcBWIGoYBM5M Top hits
-
