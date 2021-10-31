@@ -33,6 +33,7 @@ sp = spotipy.Spotify(auth_manager=auth_manager)
 
 
 # Create a connection using MongoClient.
+#IMPORTANT
 def get_database():
     client = MongoClient(db_string)
     return client['trackdb']
@@ -99,7 +100,7 @@ if __name__ == '__main__':
     print("Writing...")
     for i in range(0, len(track_ids)):
         trackdb.insert_one(get_all_track_data((track_ids[i]), i+1))
-    print(f"Successfully wrote to {trackdb.name}.")
+    print(f"Successfully wrote to Database: {trackdb.name}.")
 
     # TODO
     # Automate this script to run every day or whenever Spotify Top Hits updates

@@ -1,11 +1,9 @@
 # Spotify-track-tracker
     Author: Jack Oporto
-    Valencia College CTSD BAS
-    CEN 4930C - Seminar in Software Development
     
     Tech stack: Spotify API, spotipy, MongoDB, PyMongo
     
-    This program gathers song data from Spotify's "Today's Top Hits'
+    This program gathers song data from Spotify's playlist "Today's Top Hits'
     Metadata is stored in a MongoDB Atlas database.
     
     Step 1: Connect to database
