@@ -38,7 +38,6 @@
     "$oid": "61626e976753d4336bcd8e70"
   },
   "album": {
-    "album_type": "single",
     "artists": [
       {
         "external_urls": {
@@ -51,56 +50,16 @@
         "uri": "spotify:artist:6eUKZXaKkcviH0Ku9w2n3V"
       }
     ],
-    "external_urls": {
-      "spotify": "https://open.spotify.com/album/5kFCfioZraFsRWpoitQjmx"
-    },
-    "id": "5kFCfioZraFsRWpoitQjmx",
-    "images": [
-      {
-        "height": 640,
-        "url": "https://i.scdn.co/image/ab67616d0000b273469407300636945a5eb2d9ed",
-        "width": 640
-      },
-      {
-        "height": 300,
-        "url": "https://i.scdn.co/image/ab67616d00001e02469407300636945a5eb2d9ed",
-        "width": 300
-      },
-      {
-        "height": 64,
-        "url": "https://i.scdn.co/image/ab67616d00004851469407300636945a5eb2d9ed",
-        "width": 64
-      }
-    ],
-    "name": "Shivers",
-    "release_date": "2021-09-10",
-    "total_tracks": 1
+    "name": "Shivers"
   },
-  "artists": [
-    {
-      "external_urls": {
-        "spotify": "https://open.spotify.com/artist/6eUKZXaKkcviH0Ku9w2n3V"
-      },
-      "href": "https://api.spotify.com/v1/artists/6eUKZXaKkcviH0Ku9w2n3V",
-      "id": "6eUKZXaKkcviH0Ku9w2n3V",
-      "name": "Ed Sheeran",
-      "type": "artist",
-      "uri": "spotify:artist:6eUKZXaKkcviH0Ku9w2n3V"
-    }
-  ],
   "duration_ms": 207853,
-  "external_urls": {
-    "spotify": "https://open.spotify.com/track/6bQfNiqyCX7UaQSvVVGo4I"
-  },
   "id": "6bQfNiqyCX7UaQSvVVGo4I",
   "name": "Shivers",
   "popularity": 78,
-  "preview_url": null,
-  "track_number": 1,
   "uri": "spotify:track:6bQfNiqyCX7UaQSvVVGo4I",
   "Playlist Position": 1,
   "DATE RECORDED": "2021-10-10 00:39:51"
-  }
+}
   ```
 
 ### Data explained:
@@ -134,18 +93,8 @@
           
         - `"uri": "spotify:artist:6eUKZXaKkcviH0Ku9w2n3V"`
             (Uniform Resource Indicator) Link to open artist in Spotify app
-   - `"id": "5kFCfioZraFsRWpoitQjmx"`
-       Isolated album ID
-   - `"images"`
-      Album artwork in three different sizes
-   - `"artists"`
-       Redundant data info for this track, same as "artists" above
    - `"duration_ms": 207853`
       Song length in milliseconds
-   - `"external_urls": {
-    "spotify": "https://open.spotify.com/track/6bQfNiqyCX7UaQSvVVGo4I"`
-    
-      URL to open this track on Spotify Web client
       
    - `"id": "6bQfNiqyCX7UaQSvVVGo4I",`
       Isolated track ID
@@ -154,8 +103,6 @@
        Track name
    - `"popularity": 78,`
       Spotify's internal popularity rating. 1-100
-   - `"track_number": 1,`
-      Track number within album
    - `"uri": "spotify:track:6bQfNiqyCX7UaQSvVVGo4I",`
       Link to open track in Spotify app
    - `"Playlist Position": 1,`
