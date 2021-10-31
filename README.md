@@ -17,7 +17,7 @@
 
     Spotify API, spotipy, MongoDB, PyMongo
     
-### Data entry example
+### Data entry example:
 
 ```yaml
 {
