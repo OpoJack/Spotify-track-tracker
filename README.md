@@ -17,6 +17,19 @@
 
     Spotify API, spotipy, MongoDB, PyMongo
     
+### How to use:
+    
+    Create 'secrets.py' in main folder
+```python
+         my_spotify_client_id = 'YOURCLIENTID'
+         my_spotify_token = 'YOURTOKEN'
+         db_string = 'mongodb+srv://USER:PASSWORD@DATABASE'
+  ```
+         
+     Replace above with your own credentials for the Spotify API and MongoDB info
+     run main.py
+
+    
 ### Data entry example:
 
 ```yaml
@@ -148,3 +161,4 @@
    - `"Playlist Position": 1,`
       Position in Top 50 playlist. 1 = top, 50 = bottom
    - `"DATE RECORDED": "2021-10-10 00:39:51"`
+      Date this specific entry was recorded
