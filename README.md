@@ -6,12 +6,6 @@
     This program gathers song data from Spotify's playlist "Today's Top Hits'
     each time it's updated
     Metadata is stored in a MongoDB Atlas database.
-    
-    Program steps:
-    Step 1: Connect to database
-    Step 2: Create new database if doesn't exist
-    Step 3: Place trackIDs into testData
-    Step 4: Pull data for each track and place into database
 
 ### Tech stack: 
 
